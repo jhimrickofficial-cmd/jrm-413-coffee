@@ -1,0 +1,1424 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#211811">
+  <meta name="description" content="Discover 4:13 Coffee in San Antonio, Texas. Good coffee, memorable moments, and a little time for yourself. Find us on Potranco Road.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="4:13 Coffee | A Good Moment Starts Here">
+  <meta property="og:description" content="Your next coffee moment is waiting in San Antonio, Texas. Discover 4:13 Coffee.">
+  <meta property="og:image" content="413a.jpg">
+  <title>4:13 Coffee | A Good Moment Starts Here</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --espresso:#211811;
+      --mocha:#35271f;
+      --brown:#513829;
+      --cream:#f5efe5;
+      --paper:#faf7f1;
+      --sand:#e8ddcb;
+      --caramel:#bc8b56;
+      --gold:#d7aa70;
+      --white:#fffdf8;
+      --muted:#786b60;
+      --line:rgba(54,39,28,.17);
+      --serif:"Playfair Display",Georgia,serif;
+      --sans:"DM Sans",Arial,sans-serif;
+      --display:"Manrope",Arial,sans-serif;
+      --header-h:88px;
+      --gutter:clamp(22px,6vw,110px);
+      --ease:cubic-bezier(.22,1,.36,1);
+    }
+
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{
+      margin:0;
+      color:var(--espresso);
+      background:var(--paper);
+      font-family:var(--sans);
+      -webkit-font-smoothing:antialiased;
+      overflow-x:clip;
+    }
+    body.menu-open{overflow:hidden}
+    ::selection{background:var(--caramel);color:white}
+    img{display:block;width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    button,a{-webkit-tap-highlight-color:transparent}
+    button:focus-visible,a:focus-visible{
+      outline:3px solid var(--gold);
+      outline-offset:5px;
+    }
+    .container{width:min(100% - 2 * var(--gutter),1600px);margin-inline:auto}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:13px;
+      font-family:var(--display);
+      font-size:10px;font-weight:800;
+      letter-spacing:.23em;text-transform:uppercase;
+    }
+    .eyebrow::before{
+      content:"";width:23px;height:1px;
+      background:currentColor;opacity:.75;
+    }
+    .serif{font-family:var(--serif);font-weight:400}
+    .italic{font-style:italic;font-weight:400}
+    .section-pad{padding-block:clamp(95px,12vw,190px)}
+    .section-title{
+      font-family:var(--serif);font-weight:400;
+      font-size:clamp(45px,6.8vw,112px);
+      letter-spacing:-.065em;line-height:1.08;
+      margin:28px 0;
+    }
+    .body-copy{
+      font-size:clamp(15px,1.15vw,17px);
+      line-height:1.95;color:var(--muted);
+      max-width:500px;
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:28px;min-height:58px;padding:15px 26px;
+      border:1px solid transparent;cursor:pointer;
+      font-family:var(--display);font-size:10px;
+      font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+      transition:background .35s,color .35s,border .35s,transform .35s var(--ease);
+    }
+    .btn:hover{transform:translateY(-3px)}
+    .btn svg{width:17px;height:17px;transition:transform .3s}
+    .btn:hover svg{transform:translate(3px,-3px)}
+    .btn-light{background:var(--cream);color:var(--espresso)}
+    .btn-light:hover{background:white}
+    .btn-dark{background:var(--espresso);color:var(--cream)}
+    .btn-dark:hover{background:var(--brown)}
+    .btn-outline{color:white;border-color:rgba(255,255,255,.6)}
+    .btn-outline:hover{background:white;color:var(--espresso)}
+    .text-link{
+      display:inline-flex;align-items:center;gap:18px;
+      padding-bottom:10px;border-bottom:1px solid currentColor;
+      font-size:11px;letter-spacing:.15em;font-weight:700;
+      text-transform:uppercase;transition:gap .3s,color .3s;
+    }
+    .text-link:hover{gap:27px;color:var(--caramel)}
+    .text-link span{font-size:20px;font-weight:400}
+
+    /* HEADER */
+    .site-header{
+      position:fixed;z-index:100;inset:0 0 auto;
+      height:var(--header-h);
+      display:flex;align-items:center;
+      padding-inline:var(--gutter);
+      color:white;
+      border-bottom:1px solid rgba(255,255,255,.22);
+      transition:background .4s,border .4s,height .4s,color .4s;
+    }
+    .site-header.is-scrolled{
+      height:74px;background:rgba(250,247,241,.97);
+      color:var(--espresso);border-color:var(--line);
+      box-shadow:0 7px 28px rgba(24,15,10,.04);
+      backdrop-filter:blur(15px);
+    }
+    .nav-inner{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:25px;width:100%;max-width:1800px;margin:auto;
+    }
+    .logo-wrap{
+      display:flex;align-items:center;gap:13px;
+      flex-shrink:0;position:relative;z-index:105;
+    }
+    .logo-image{
+      width:57px;height:57px;object-fit:contain;
+      border-radius:50%;background:#1c1714;
+    }
+    .brand-text{
+      font-family:var(--display);font-size:18px;
+      font-weight:800;letter-spacing:-.065em;line-height:1;
+    }
+    .brand-text small{
+      display:block;margin-top:6px;
+      font-size:8px;font-weight:700;letter-spacing:.19em;
+      text-transform:uppercase;
+    }
+    .desktop-nav{display:flex;gap:clamp(15px,2.3vw,38px);align-items:center}
+    .desktop-nav a:not(.btn){
+      position:relative;font-size:10px;font-weight:700;
+      letter-spacing:.14em;text-transform:uppercase;
+      white-space:nowrap;padding-block:8px;
+    }
+    .desktop-nav a:not(.btn)::after{
+      content:"";position:absolute;bottom:0;left:0;
+      width:0;height:1px;background:currentColor;
+      transition:width .3s;
+    }
+    .desktop-nav a:hover::after{width:100%}
+    .nav-cta{
+      padding:13px 19px;min-height:44px;
+      border:1px solid currentColor;
+      font-size:9px;gap:12px;white-space:nowrap;
+    }
+    .nav-cta:hover{background:var(--espresso);color:white}
+    .site-header:not(.is-scrolled) .nav-cta:hover{
+      background:white;color:var(--espresso);
+    }
+    .menu-toggle{
+      display:none;width:44px;height:44px;
+      border:0;background:none;color:inherit;
+      position:relative;z-index:105;cursor:pointer;
+    }
+    .menu-toggle span{
+      display:block;width:23px;height:1px;
+      background:currentColor;margin:6px auto;
+      transition:transform .3s,opacity .3s;
+    }
+    .mobile-menu{display:none}
+    .scroll-progress{
+      position:absolute;left:0;bottom:-1px;
+      width:100%;height:2px;pointer-events:none;
+    }
+    .scroll-progress span{
+      display:block;width:100%;height:100%;
+      background:var(--caramel);transform:scaleX(0);
+      transform-origin:left center;
+    }
+
+    /* HERO */
+    .hero{
+      position:relative;min-height:760px;
+      height:100svh;max-height:1150px;
+      display:flex;align-items:center;
+      isolation:isolate;overflow:hidden;
+      background:#302219;color:white;
+    }
+    .hero-media{position:absolute;inset:-8% 0;z-index:-2;overflow:hidden}
+    .hero-media img{
+      width:100%;height:100%;object-fit:cover;
+      object-position:center 53%;will-change:transform;
+    }
+    .hero::after{
+      content:"";position:absolute;inset:0;z-index:-1;
+      background:
+        linear-gradient(90deg,rgba(14,10,7,.82) 0%,rgba(14,10,7,.55) 46%,rgba(14,10,7,.12) 100%),
+        linear-gradient(0deg,rgba(13,9,6,.55),transparent 40%);
+    }
+    .hero-content{
+      position:relative;z-index:2;width:100%;
+      padding-top:calc(var(--header-h) + 45px);
+      padding-bottom:100px;
+    }
+    .hero-kicker{color:#e7c7a3}
+    .hero h1{
+      font-family:var(--serif);font-size:clamp(68px,9.8vw,169px);
+      font-weight:400;letter-spacing:-.073em;line-height:.99;
+      max-width:1120px;margin:30px 0 33px;
+    }
+    .hero h1 em{color:#e3bf94;font-weight:400}
+    .hero-description{
+      font-size:clamp(15px,1.3vw,18px);
+      line-height:1.9;max-width:390px;
+      color:rgba(255,255,255,.78);
+    }
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:37px}
+    .hero-bottom{
+      position:absolute;bottom:37px;left:var(--gutter);right:var(--gutter);
+      display:flex;justify-content:space-between;align-items:end;
+      font-size:10px;letter-spacing:.19em;text-transform:uppercase;
+      color:rgba(255,255,255,.76);
+    }
+    .scroll-cue{display:flex;align-items:center;gap:16px}
+    .scroll-line{
+      width:1px;height:45px;background:rgba(255,255,255,.3);
+      position:relative;overflow:hidden;
+    }
+    .scroll-line::after{
+      content:"";position:absolute;inset:0;
+      background:white;transform:translateY(-100%);
+      animation:scrollDrop 2.4s infinite;
+    }
+    @keyframes scrollDrop{
+      55%{transform:translateY(100%)}
+      100%{transform:translateY(100%)}
+    }
+    .hero-index{font-size:11px}
+
+    /* MARQUEE */
+    .marquee{
+      background:var(--espresso);color:var(--sand);
+      padding:25px 0;overflow:hidden;
+      border-top:1px solid rgba(255,255,255,.15);
+    }
+    .marquee-track{
+      display:flex;width:max-content;gap:48px;
+      animation:marqueeMove 34s linear infinite;
+    }
+    .marquee-track span{
+      display:flex;align-items:center;gap:48px;
+      font-size:11px;font-weight:700;letter-spacing:.23em;
+      text-transform:uppercase;white-space:nowrap;
+    }
+    .marquee-track b{font-size:17px;color:var(--caramel);font-weight:400}
+    @keyframes marqueeMove{to{transform:translateX(-50%)}}
+
+    /* INTRO */
+    .intro{background:var(--paper);overflow:hidden}
+    .intro-grid{
+      display:grid;grid-template-columns:1.03fr .97fr;
+      align-items:center;gap:clamp(55px,9vw,160px);
+    }
+    .intro-visual{position:relative;padding:0 10% 10% 0}
+    .intro-image{
+      position:relative;aspect-ratio:4/5;
+      overflow:hidden;background:var(--sand);
+    }
+    .intro-image img,.parallax-image img{
+      height:115%;width:100%;object-fit:cover;
+      position:absolute;inset:-7.5% 0 auto;
+    }
+    .intro-stamp{
+      position:absolute;bottom:0;right:0;
+      width:clamp(125px,15vw,205px);aspect-ratio:1;
+      border-radius:50%;background:var(--espresso);
+      color:var(--cream);
+      display:flex;flex-direction:column;
+      align-items:center;justify-content:center;
+      border:8px solid var(--paper);
+      transform:rotate(-11deg);
+    }
+    .intro-stamp strong{
+      font-family:var(--serif);font-size:clamp(35px,5vw,68px);
+      font-weight:400;letter-spacing:-.07em;
+    }
+    .intro-stamp small{
+      font-size:8px;letter-spacing:.16em;
+      font-weight:700;text-transform:uppercase;
+    }
+    .intro-copy{padding-block:40px}
+    .intro-copy .section-title{font-size:clamp(50px,6.2vw,103px)}
+    .intro-copy .text-link{margin-top:30px}
+    .intro-footnote{
+      display:flex;align-items:center;gap:15px;
+      margin-top:55px;font-size:10px;letter-spacing:.15em;
+      font-weight:700;text-transform:uppercase;
+      color:var(--muted);
+    }
+    .intro-footnote::before{
+      content:"";height:1px;width:50px;background:var(--caramel);
+    }
+
+    /* EXPERIENCE */
+    .experience{background:var(--cream);overflow:hidden}
+    .section-topline{
+      display:flex;justify-content:space-between;align-items:center;
+      gap:20px;padding-bottom:28px;border-bottom:1px solid var(--line);
+    }
+    .section-number{font-size:11px;color:var(--muted);letter-spacing:.12em}
+    .experience-heading{
+      display:flex;justify-content:space-between;
+      gap:35px;align-items:end;margin-bottom:70px;
+    }
+    .experience-heading h2{max-width:950px;margin-bottom:0}
+    .experience-heading p{max-width:270px;margin-bottom:8px}
+    .experience-grid{
+      display:grid;grid-template-columns:1fr .81fr;
+      gap:clamp(35px,8vw,130px);align-items:start;
+    }
+    .experience-secondary{padding-top:clamp(100px,17vw,260px)}
+    .experience-photo{
+      overflow:hidden;position:relative;
+      background:#c9b5a0;
+    }
+    .experience-primary .experience-photo{aspect-ratio:4/4.7}
+    .experience-secondary .experience-photo{aspect-ratio:4/4.45}
+    .experience-photo img{width:100%;height:100%;object-fit:cover}
+    .photo-caption{
+      display:flex;align-items:start;justify-content:space-between;
+      gap:25px;margin-top:24px;
+    }
+    .photo-caption h3{
+      font-family:var(--serif);font-weight:400;
+      font-size:clamp(25px,3vw,45px);
+      letter-spacing:-.04em;margin:0;
+    }
+    .photo-caption small{
+      text-transform:uppercase;font-size:10px;
+      letter-spacing:.17em;color:var(--muted);
+      line-height:2;text-align:right;
+    }
+
+    /* DARK QUOTE */
+    .manifesto{
+      position:relative;background:var(--mocha);color:var(--cream);
+      overflow:hidden;padding:clamp(130px,19vw,290px) 0;
+      text-align:center;
+    }
+    .manifesto::before{
+      content:"4:13";position:absolute;inset:auto 0 -18%;
+      font:400 clamp(240px,43vw,750px)/1 var(--serif);
+      letter-spacing:-.12em;color:rgba(255,255,255,.025);
+      pointer-events:none;white-space:nowrap;
+    }
+    .manifesto-content{position:relative;z-index:2}
+    .manifesto .eyebrow{color:var(--gold)}
+    .manifesto h2{
+      font:400 clamp(49px,8vw,130px)/1.14 var(--serif);
+      letter-spacing:-.065em;
+      max-width:1200px;margin:45px auto 35px;
+    }
+    .manifesto h2 em{color:var(--gold)}
+    .manifesto p{color:#c8b8aa;font-size:15px;letter-spacing:.035em}
+
+    /* PINNED STORY */
+    .story{background:var(--espresso);color:var(--cream);overflow:hidden}
+    .story-stage{height:100svh;min-height:720px;position:relative;overflow:hidden}
+    .story-image{position:absolute;inset:0}
+    .story-image img{width:100%;height:100%;object-fit:cover}
+    .story-image::after{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(90deg,rgba(18,12,8,.84),rgba(18,12,8,.24) 95%),
+        linear-gradient(0deg,rgba(18,12,8,.35),transparent);
+    }
+    .story-inner{
+      position:relative;z-index:3;
+      display:flex;align-items:center;height:100%;
+      padding-block:120px;
+    }
+    .story-panel{position:absolute;max-width:850px;padding-right:15px}
+    .story-panel:not(:first-child){opacity:0;visibility:hidden}
+    .story-panel .eyebrow{color:var(--gold)}
+    .story-panel h2{
+      font:400 clamp(61px,9vw,143px)/1.03 var(--serif);
+      letter-spacing:-.07em;margin:27px 0;
+    }
+    .story-panel h2 em{color:#e0b581}
+    .story-panel p{
+      max-width:450px;font-size:16px;line-height:1.9;
+      color:#e0d2c4;
+    }
+    .story-counter{
+      position:absolute;z-index:5;
+      bottom:50px;left:var(--gutter);
+      display:flex;align-items:center;gap:20px;
+      font-size:11px;letter-spacing:.17em;
+    }
+    .story-counter .rule{
+      width:80px;height:1px;background:rgba(255,255,255,.4);
+    }
+    .story-count-current{font-size:22px;font-family:var(--serif)}
+    .story-label{
+      position:absolute;right:var(--gutter);bottom:55px;
+      z-index:5;text-transform:uppercase;
+      font-size:10px;letter-spacing:.18em;color:#e6d8c8;
+    }
+
+    /* GALLERY */
+    .gallery{background:var(--paper);overflow:hidden}
+    .gallery-heading{text-align:center;margin-bottom:70px}
+    .gallery-heading .eyebrow{justify-content:center}
+    .gallery-heading h2{margin:20px 0}
+    .gallery-heading p{margin:0 auto;text-align:center}
+    .gallery-grid{
+      display:grid;grid-template-columns:1fr 1.14fr 1fr;
+      grid-template-rows:clamp(240px,31vw,460px) clamp(225px,29vw,430px);
+      gap:clamp(9px,1.5vw,23px);
+    }
+    .gallery-item{position:relative;overflow:hidden;background:var(--sand)}
+    .gallery-item img{
+      height:100%;object-fit:cover;
+      transition:transform 1s var(--ease);
+    }
+    .gallery-item:hover img{transform:scale(1.06)}
+    .gallery-item:nth-child(1){grid-row:1/3}
+    .gallery-item:nth-child(2){grid-column:2/4}
+    .gallery-item:nth-child(3){grid-column:2}
+    .gallery-item:nth-child(4){grid-column:3}
+    .gallery-overlay{
+      position:absolute;inset:auto 0 0;
+      padding:50px 22px 20px;
+      background:linear-gradient(transparent,rgba(0,0,0,.6));
+      color:white;font-size:10px;
+      text-transform:uppercase;letter-spacing:.15em;
+      opacity:0;transition:opacity .4s;
+    }
+    .gallery-item:hover .gallery-overlay{opacity:1}
+    .gallery-footer{
+      display:flex;justify-content:space-between;align-items:center;
+      gap:25px;margin-top:34px;
+    }
+    .gallery-footer p{
+      margin:0;font-family:var(--serif);
+      font-style:italic;font-size:clamp(23px,3vw,40px);
+    }
+
+    /* IMMERSIVE BANNER */
+    .banner{
+      position:relative;min-height:780px;height:88svh;
+      display:flex;align-items:center;justify-content:center;
+      text-align:center;overflow:hidden;color:white;
+      background:var(--espresso);
+    }
+    .banner-bg{position:absolute;inset:-10% 0;z-index:0}
+    .banner-bg img{width:100%;height:100%;object-fit:cover}
+    .banner::after{
+      content:"";position:absolute;inset:0;
+      background:rgba(16,10,7,.49);
+    }
+    .banner-content{position:relative;z-index:2}
+    .banner h2{
+      font:400 clamp(66px,11.5vw,180px)/1.02 var(--serif);
+      letter-spacing:-.075em;
+      margin:25px auto 42px;max-width:1350px;
+    }
+    .banner h2 em{color:#eac79e}
+    .banner-content .eyebrow{color:#f3d3a8}
+
+    /* LOCATION */
+    .visit{background:var(--cream);overflow:hidden}
+    .visit-grid{
+      display:grid;grid-template-columns:1fr 1.12fr;
+      align-items:center;gap:clamp(60px,10vw,165px);
+    }
+    .visit-copy h2{font-size:clamp(65px,8vw,128px)}
+    .visit-details{margin:45px 0}
+    .visit-detail{
+      border-top:1px solid var(--line);
+      display:grid;grid-template-columns:110px 1fr;
+      gap:15px;padding:21px 0;
+    }
+    .visit-detail:last-child{border-bottom:1px solid var(--line)}
+    .visit-detail strong{
+      font-size:10px;letter-spacing:.14em;
+      text-transform:uppercase;padding-top:5px;
+    }
+    .visit-detail p{
+      margin:0;color:#6c5b4f;
+      font-size:15px;line-height:1.7;
+    }
+    .visit-visual{position:relative;padding:0 0 65px 65px}
+    .visit-photo{aspect-ratio:4/4.8;overflow:hidden;background:#c7a584}
+    .visit-photo img{height:100%;object-fit:cover}
+    .visit-badge{
+      position:absolute;bottom:0;left:0;
+      width:clamp(155px,19vw,260px);aspect-ratio:1;
+      display:flex;flex-direction:column;
+      justify-content:center;align-items:center;
+      background:var(--espresso);color:var(--cream);
+      text-align:center;padding:20px;
+    }
+    .visit-badge span{
+      font-family:var(--serif);font-size:clamp(47px,6vw,82px);
+      letter-spacing:-.09em;
+    }
+    .visit-badge small{
+      letter-spacing:.2em;font-size:9px;
+      line-height:1.7;text-transform:uppercase;
+    }
+
+    /* FOOTER */
+    .footer{background:var(--espresso);color:var(--cream)}
+    .footer-top{
+      display:grid;grid-template-columns:1.5fr .8fr .8fr;
+      gap:50px;padding-block:90px 100px;
+    }
+    .footer-brand{max-width:550px}
+    .footer-brand img{
+      width:74px;height:74px;object-fit:contain;
+      border-radius:50%;margin-bottom:30px;
+    }
+    .footer-brand h2{
+      font:400 clamp(45px,5vw,80px)/1.14 var(--serif);
+      letter-spacing:-.065em;margin:0;
+    }
+    .footer-brand h2 em{color:var(--gold)}
+    .footer-column h3{
+      margin:10px 0 28px;
+      font-size:10px;letter-spacing:.22em;
+      text-transform:uppercase;color:var(--gold);
+    }
+    .footer-column a,.footer-column p{
+      display:block;margin:0 0 19px;
+      font-size:14px;color:#c8b8aa;
+      line-height:1.65;transition:color .25s;
+    }
+    .footer-column a:hover{color:white}
+    .footer-bottom{
+      display:flex;justify-content:space-between;
+      gap:20px;flex-wrap:wrap;
+      border-top:1px solid rgba(255,255,255,.14);
+      padding:27px 0 35px;
+      color:#9d8b7c;font-size:10px;
+      letter-spacing:.1em;text-transform:uppercase;
+    }
+    .footer-bottom a:hover{color:white}
+
+    /* RESPONSIVE */
+    @media(max-width:1150px){
+      .desktop-nav{gap:15px}
+      .desktop-nav a:not(.btn){font-size:9px}
+      .nav-cta{padding:11px 13px}
+      .experience-heading{align-items:start;flex-direction:column}
+      .experience-heading p{max-width:520px}
+    }
+    @media(max-width:950px){
+      :root{--header-h:76px}
+      .desktop-nav{display:none}
+      .menu-toggle{display:block}
+      .mobile-menu{
+        display:flex;flex-direction:column;
+        position:fixed;top:0;left:0;right:0;
+        height:100dvh;z-index:101;
+        background:var(--cream);color:var(--espresso);
+        padding:120px var(--gutter) 45px;
+        opacity:0;visibility:hidden;
+        transform:translateY(-15px);
+        transition:opacity .35s,visibility .35s,transform .35s;
+        overflow-y:auto;
+      }
+      .mobile-menu.is-open{
+        opacity:1;visibility:visible;transform:translateY(0);
+      }
+      .mobile-menu a:not(.btn){
+        display:block;padding:12px 0;
+        font:400 clamp(32px,7vw,55px)/1.25 var(--serif);
+        letter-spacing:-.045em;
+        border-bottom:1px solid var(--line);
+      }
+      .mobile-menu .btn{margin-top:35px;align-self:flex-start}
+      .menu-toggle.is-active span:first-child{transform:translateY(3.5px) rotate(45deg)}
+      .menu-toggle.is-active span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+      .site-header.menu-active{color:var(--espresso);border-color:transparent}
+      .intro-grid,.visit-grid{gap:55px}
+      .story-stage{min-height:650px}
+      .gallery-grid{grid-template-rows:330px 270px}
+    }
+    @media(max-width:700px){
+      :root{--gutter:22px;--header-h:72px}
+      .site-header.is-scrolled{height:66px}
+      .logo-image{width:45px;height:45px}
+      .brand-text{font-size:16px}
+      .brand-text small{font-size:7px}
+      .hero{
+        min-height:650px;height:100svh;max-height:none;
+        text-align:center;
+      }
+      .hero::after{
+        background:linear-gradient(0deg,rgba(14,9,6,.79),
+          rgba(14,9,6,.46) 65%,rgba(14,9,6,.44));
+      }
+      .hero-media img{object-position:59% center}
+      .hero-content{
+        padding-top:calc(var(--header-h) + 40px);
+        padding-bottom:80px;
+      }
+      .hero h1{
+        font-size:clamp(60px,12.4vw,95px);
+        line-height:1.03;margin:23px auto 26px;
+      }
+      .hero-kicker{justify-content:center}
+      .hero-description{margin-inline:auto;font-size:15px}
+      .hero-actions{justify-content:center}
+      .hero-actions .btn{min-height:52px;padding-inline:19px;gap:12px}
+      .hero-bottom{bottom:22px}
+      .hero-index{display:none}
+      .section-pad{padding-block:95px}
+      .section-title{font-size:clamp(47px,10vw,75px)}
+      .intro-grid,.visit-grid,.experience-grid{grid-template-columns:1fr}
+      .intro-grid{gap:30px}
+      .intro-visual{padding-right:8%;padding-bottom:8%}
+      .intro-copy{padding:0}
+      .intro-copy .section-title{font-size:clamp(49px,10.6vw,75px)}
+      .intro-stamp{width:135px;border-width:6px}
+      .intro-stamp strong{font-size:43px}
+      .intro-footnote{margin-top:35px}
+      .experience-heading{margin-bottom:45px}
+      .experience-grid{gap:70px}
+      .experience-secondary{padding-top:0}
+      .experience-primary .experience-photo{aspect-ratio:4/4.4}
+      .experience-secondary .experience-photo{aspect-ratio:4/3.7}
+      .manifesto{padding-block:120px}
+      .manifesto h2{font-size:clamp(49px,10vw,80px)}
+      .story-stage{height:auto;min-height:0}
+      .story-image{inset:0}
+      .story-image::after{background:rgba(17,11,7,.67)}
+      .story-inner{display:block;padding-block:120px 130px}
+      .story-panel{
+        position:relative!important;
+        opacity:1!important;visibility:visible!important;
+        transform:none!important;
+        margin-bottom:95px;
+      }
+      .story-panel:last-child{margin-bottom:0}
+      .story-panel h2{font-size:clamp(57px,11vw,85px)}
+      .story-panel p{font-size:15px}
+      .story-counter,.story-label{display:none}
+      .gallery-heading{margin-bottom:45px}
+      .gallery-grid{
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:300px 250px 230px;
+        gap:10px;
+      }
+      .gallery-item:nth-child(1){grid-column:1/2;grid-row:1/3}
+      .gallery-item:nth-child(2){grid-column:2;grid-row:1}
+      .gallery-item:nth-child(3){grid-column:2;grid-row:2}
+      .gallery-item:nth-child(4){grid-column:1/3;grid-row:3}
+      .gallery-overlay{opacity:1}
+      .gallery-footer{flex-direction:column;align-items:flex-start}
+      .banner{height:75svh;min-height:570px}
+      .banner h2{font-size:clamp(65px,12vw,99px)}
+      .visit-grid{gap:70px}
+      .visit-copy h2{font-size:clamp(63px,12vw,94px)}
+      .visit-visual{padding-left:35px;padding-bottom:40px}
+      .visit-badge{width:150px}
+      .visit-badge span{font-size:51px}
+      .footer-top{grid-template-columns:1fr 1fr;gap:45px 25px}
+      .footer-brand{grid-column:1/-1}
+      .footer-brand h2{font-size:58px}
+    }
+    @media(max-width:390px){
+      .hero h1{font-size:clamp(56px,12vw,68px)}
+      .hero-actions{gap:9px}
+      .hero-actions .btn{font-size:9px;padding:12px 13px}
+      .brand-text{font-size:14px}
+      .gallery-grid{grid-template-rows:250px 220px 190px}
+      .visit-detail{grid-template-columns:87px 1fr}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{
+        animation-duration:.01ms!important;
+        animation-iteration-count:1!important;
+        transition-duration:.01ms!important;
+      }
+      .marquee-track{animation:none}
+      .hero-media img,.banner-bg img,.intro-image img,
+      .parallax-image img{transform:none!important}
+    }
+  </style>
+</head>
+<body>
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <symbol id="arrow-up-right" viewBox="0 0 24 24">
+      <path d="M5 19 19 5M7 5h12v12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </svg>
+
+  <header class="site-header" id="header">
+    <div class="nav-inner">
+      <a class="logo-wrap" href="#home" aria-label="4:13 Coffee home">
+        <img class="logo-image" src="413logo.jpg" alt="4:13 Coffee logo" width="57" height="57">
+        <span class="brand-text">
+          4:13 COFFEE
+          <small>San Antonio, Texas</small>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#our-story">Our Story</a>
+        <a href="#coffee">Coffee</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#visit">Visit Us</a>
+      </nav>
+
+      <a class="btn nav-cta directions-link" target="_blank" rel="noopener noreferrer" href="#">
+        Get Directions
+        <svg aria-hidden="true"><use href="#arrow-up-right"/></svg>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+
+    <div class="scroll-progress" aria-hidden="true">
+      <span id="scrollProgress"></span>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation" aria-hidden="true">
+    <a href="#home">Home</a>
+    <a href="#our-story">Our Story</a>
+    <a href="#coffee">Coffee</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#visit">Visit Us</a>
+    <a class="btn btn-dark directions-link" href="#" target="_blank" rel="noopener noreferrer">
+      Get Directions
+      <svg aria-hidden="true"><use href="#arrow-up-right"/></svg>
+    </a>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home" aria-labelledby="heroTitle">
+      <div class="hero-media">
+        <img
+          src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=2200&q=85"
+          alt="Coffee being poured into a cup"
+          fetchpriority="high"
+          id="heroImage"
+        >
+      </div>
+
+      <div class="container hero-content">
+        <span class="eyebrow hero-kicker">San Antonio, Texas • 4:13 Coffee</span>
+        <h1 id="heroTitle">
+          A good<br>
+          moment<br>
+          <em>starts here.</em>
+        </h1>
+        <p class="hero-description">
+          Some moments deserve a little more time.
+          Make this one a coffee moment.
+        </p>
+        <div class="hero-actions">
+          <a href="#" class="btn btn-light directions-link" target="_blank" rel="noopener noreferrer">
+            Get Directions
+            <svg aria-hidden="true"><use href="#arrow-up-right"/></svg>
+          </a>
+          <a href="#our-story" class="btn btn-outline">
+            Discover 4:13
+            <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-bottom">
+        <span class="scroll-cue">
+          <span class="scroll-line" aria-hidden="true"></span>
+          Scroll to Explore
+        </span>
+        <span class="hero-index">Coffee / Moments / Connection</span>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-label="Coffee, community, and good moments">
+      <div class="marquee-track" aria-hidden="true">
+        <span>GOOD COFFEE <b>✳</b> GOOD COMPANY <b>✳</b> GOOD MOMENTS <b>✳</b> SAN ANTONIO <b>✳</b></span>
+        <span>GOOD COFFEE <b>✳</b> GOOD COMPANY <b>✳</b> GOOD MOMENTS <b>✳</b> SAN ANTONIO <b>✳</b></span>
+        <span>GOOD COFFEE <b>✳</b> GOOD COMPANY <b>✳</b> GOOD MOMENTS <b>✳</b> SAN ANTONIO <b>✳</b></span>
+        <span>GOOD COFFEE <b>✳</b> GOOD COMPANY <b>✳</b> GOOD MOMENTS <b>✳</b> SAN ANTONIO <b>✳</b></span>
+      </div>
+    </div>
+
+    <!-- INTRO -->
+    <section class="intro section-pad" id="our-story">
+      <div class="container intro-grid">
+        <div class="intro-visual">
+          <div class="intro-image parallax-image">
+            <img src="413a.jpg" alt="A featured photograph of 4:13 Coffee" loading="lazy" decoding="async">
+          </div>
+          <div class="intro-stamp">
+            <strong>4:13</strong>
+            <small>San Antonio<br>Texas</small>
+          </div>
+        </div>
+        <div class="intro-copy">
+          <span class="eyebrow">A Little About The Moment</span>
+          <h2 class="section-title reveal-text">
+            More than<br>
+            <span class="italic">just a cup.</span>
+          </h2>
+          <p class="body-copy">
+            There's something about coffee that makes the ordinary
+            feel a little extraordinary. The first sip. A familiar
+            face. A conversation that lasts longer than you planned.
+          </p>
+          <p class="body-copy">
+            At 4:13 Coffee, we invite you to make room for those
+            little moments that stay with you.
+          </p>
+          <a href="#coffee" class="text-link">
+            Discover The Coffee Experience
+            <span aria-hidden="true">↗</span>
+          </a>
+          <div class="intro-footnote">A Coffee Moment In San Antonio</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COFFEE EXPERIENCE -->
+    <section class="experience section-pad" id="coffee">
+      <div class="container">
+        <div class="section-topline">
+          <span class="eyebrow">The Coffee Experience</span>
+          <span class="section-number">01 / 04</span>
+        </div>
+
+        <div class="experience-heading">
+          <h2 class="section-title reveal-text">
+            It's the little<br>
+            <span class="italic">things that matter.</span>
+          </h2>
+          <p class="body-copy">
+            An invitation to slow down, savor the moment,
+            and enjoy everything that makes coffee special.
+          </p>
+        </div>
+
+        <div class="experience-grid">
+          <article class="experience-primary">
+            <div class="experience-photo">
+              <img
+                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1300&q=85"
+                alt="Freshly prepared cups of coffee"
+                loading="lazy" decoding="async"
+              >
+            </div>
+            <div class="photo-caption">
+              <h3>A little daily ritual.</h3>
+              <small>01 / The Coffee</small>
+            </div>
+          </article>
+
+          <article class="experience-secondary">
+            <div class="experience-photo">
+              <img
+                src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1100&q=85"
+                alt="Coffee cups on a wooden table"
+                loading="lazy" decoding="async"
+              >
+            </div>
+            <div class="photo-caption">
+              <h3>Made for the moment.</h3>
+              <small>02 / The Feeling</small>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MANIFESTO -->
+    <section class="manifesto">
+      <div class="container manifesto-content">
+        <span class="eyebrow">A Thought Worth Sharing</span>
+        <h2 class="reveal-text">
+          Life happens<br>
+          between the<br>
+          <em>little moments.</em>
+        </h2>
+        <p>Take a sip. Stay a while. Enjoy the moment.</p>
+      </div>
+    </section>
+
+    <!-- PINNED STORY -->
+    <section class="story" id="coffee-story" aria-label="The coffee story">
+      <div class="story-stage" id="storyStage">
+        <div class="story-image">
+          <img
+            src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=2200&q=85"
+            alt="Coffee beans and a warm coffee atmosphere"
+            loading="lazy" decoding="async"
+          >
+        </div>
+
+        <div class="container story-inner">
+          <div class="story-panel">
+            <span class="eyebrow">The Ritual / 01</span>
+            <h2>The first<br><em>sip.</em></h2>
+            <p>That small pause before the day begins. A familiar warmth. A moment that's entirely yours.</p>
+          </div>
+
+          <div class="story-panel">
+            <span class="eyebrow">The Connection / 02</span>
+            <h2>The good<br><em>company.</em></h2>
+            <p>Some of the best conversations start with a simple invitation to grab coffee.</p>
+          </div>
+
+          <div class="story-panel">
+            <span class="eyebrow">The Feeling / 03</span>
+            <h2>The moments<br><em>that stay.</em></h2>
+            <p>It's never only about the coffee. It's about the little experiences you take with you.</p>
+          </div>
+        </div>
+
+        <div class="story-counter" aria-hidden="true">
+          <span class="story-count-current" id="storyCurrent">01</span>
+          <span class="rule"></span>
+          <span>03</span>
+        </div>
+        <span class="story-label">The 4:13 Experience</span>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery section-pad" id="gallery">
+      <div class="container">
+        <div class="gallery-heading">
+          <span class="eyebrow">Through The Lens</span>
+          <h2 class="section-title reveal-text">
+            Coffee looks<br>
+            <span class="italic">good from here.</span>
+          </h2>
+          <p class="body-copy">
+            A visual collection of the warmth, textures, and little
+            pleasures that make coffee worth slowing down for.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1000&q=85" alt="A warm cup of coffee" loading="lazy" decoding="async">
+            <span class="gallery-overlay">A Moment To Savor</span>
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1400&q=85" alt="Coffee being prepared at a café" loading="lazy" decoding="async">
+            <span class="gallery-overlay">Coffee Culture</span>
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=1000&q=85" alt="Iced coffee on a wooden surface" loading="lazy" decoding="async">
+            <span class="gallery-overlay">Everyday Favorites</span>
+          </div>
+          <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1497515114629-f71d768fd07c?auto=format&fit=crop&w=1000&q=85" alt="Café coffee preparation and atmosphere" loading="lazy" decoding="async">
+            <span class="gallery-overlay">Coffee Moments</span>
+          </div>
+        </div>
+
+        <div class="gallery-footer">
+          <p>Good coffee. Beautiful little moments.</p>
+          <a href="#visit" class="text-link">
+            Come Find Us <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMMERSIVE CTA -->
+    <section class="banner" aria-label="Visit 4:13 Coffee">
+      <div class="banner-bg">
+        <img
+          src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=2200&q=85"
+          alt="A warmly lit coffee shop interior"
+          loading="lazy" decoding="async"
+        >
+      </div>
+      <div class="container banner-content">
+        <span class="eyebrow">Your Next Coffee Moment</span>
+        <h2 class="reveal-text">
+          Make time<br>
+          for <em>coffee.</em>
+        </h2>
+        <a href="#" class="btn btn-light directions-link" target="_blank" rel="noopener noreferrer">
+          Find 4:13 Coffee
+          <svg aria-hidden="true"><use href="#arrow-up-right"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- VISIT -->
+    <section class="visit section-pad" id="visit">
+      <div class="container visit-grid">
+        <div class="visit-copy">
+          <span class="eyebrow">Come Say Hello</span>
+          <h2 class="section-title reveal-text">
+            Your next<br>
+            <span class="italic">stop: 4:13.</span>
+          </h2>
+          <p class="body-copy">
+            In San Antonio and in the mood for a good coffee moment?
+            We'd love for you to discover 4:13.
+          </p>
+          <div class="visit-details">
+            <div class="visit-detail">
+              <strong>Location</strong>
+              <p>14325 Potranco Rd<br>San Antonio, TX 78245</p>
+            </div>
+            <div class="visit-detail">
+              <strong>Find Us</strong>
+              <p>Open the map for directions and current business information.</p>
+            </div>
+          </div>
+          <a href="#" class="btn btn-dark directions-link" target="_blank" rel="noopener noreferrer">
+            Get Directions
+            <svg aria-hidden="true"><use href="#arrow-up-right"/></svg>
+          </a>
+        </div>
+
+        <div class="visit-visual">
+          <div class="visit-photo">
+            <img
+              src="https://images.unsplash.com/photo-1493857671505-72967e2e2760?auto=format&fit=crop&w=1300&q=85"
+              alt="Warm café setting with coffee"
+              loading="lazy" decoding="async"
+            >
+          </div>
+          <div class="visit-badge">
+            <span>4:13</span>
+            <small>Your Coffee Moment<br>Starts Here</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <img src="413logo.jpg" alt="4:13 Coffee logo" width="74" height="74" loading="lazy">
+        <h2>
+          See you over<br>
+          <em>coffee.</em>
+        </h2>
+      </div>
+
+      <div class="footer-column">
+        <h3>Explore</h3>
+        <a href="#home">Home</a>
+        <a href="#our-story">Our Story</a>
+        <a href="#coffee">Coffee</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#visit">Visit Us</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Find Us</h3>
+        <p>14325 Potranco Rd<br>San Antonio, TX 78245</p>
+        <a href="#" class="directions-link" target="_blank" rel="noopener noreferrer">
+          Open in Google Maps ↗
+        </a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> 4:13 Coffee. All Rights Reserved.</span>
+      <span>Made For Good Coffee & Good Moments.</span>
+      <a href="#home">Back To Top ↑</a>
+    </div>
+  </footer>
+
+  <!-- ANIMATION LIBRARIES -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+  (function(){
+    "use strict";
+
+    const MAPS_URL =
+      "https://www.google.com/maps/place/4:13+Coffee/@29.4212245,-98.7800884,883m/data=!3m1!1e3!4m6!3m5!1s0x865c4158681728e1:0xbdc8832d8263a1f4!8m2!3d29.4222431!4d-98.7783825!16s%2Fg%2F11t9ckkfdc";
+
+    const header = document.getElementById("header");
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const scrollProgress = document.getElementById("scrollProgress");
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+
+    // Directions links
+    document.querySelectorAll(".directions-link").forEach(link => {
+      link.href = MAPS_URL;
+      link.setAttribute("target","_blank");
+      link.setAttribute("rel","noopener noreferrer");
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Accessible mobile menu
+    function setMenu(open){
+      mobileMenu.classList.toggle("is-open",open);
+      menuToggle.classList.toggle("is-active",open);
+      header.classList.toggle("menu-active",open);
+      document.body.classList.toggle("menu-open",open);
+      menuToggle.setAttribute("aria-expanded",String(open));
+      menuToggle.setAttribute(
+        "aria-label",open ? "Close menu" : "Open menu"
+      );
+      mobileMenu.setAttribute("aria-hidden",String(!open));
+
+      if("inert" in mobileMenu){
+        mobileMenu.inert = !open;
+      }
+    }
+
+    if("inert" in mobileMenu) mobileMenu.inert = true;
+
+    menuToggle.addEventListener("click",()=>{
+      setMenu(!mobileMenu.classList.contains("is-open"));
+    });
+
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click",()=>setMenu(false));
+    });
+
+    document.addEventListener("keydown",event => {
+      if(event.key === "Escape") setMenu(false);
+    });
+
+    document.addEventListener("click",event => {
+      if(
+        mobileMenu.classList.contains("is-open") &&
+        !mobileMenu.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ){
+        setMenu(false);
+      }
+    });
+
+    // Header and progress updates
+    let scrollTicking = false;
+
+    function updateScrollUI(){
+      const y = window.scrollY || 0;
+      header.classList.toggle("is-scrolled",y > 50);
+
+      const max =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+      const progress = max > 0 ? Math.min(1,y/max) : 0;
+      scrollProgress.style.transform = `scaleX(${progress})`;
+
+      scrollTicking = false;
+    }
+
+    window.addEventListener("scroll",()=>{
+      if(!scrollTicking){
+        scrollTicking = true;
+        requestAnimationFrame(updateScrollUI);
+      }
+    },{passive:true});
+
+    updateScrollUI();
+
+    // Smooth native anchor navigation.
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener("click",event => {
+        const targetId = link.getAttribute("href");
+        if(!targetId || targetId === "#") return;
+
+        const target = document.querySelector(targetId);
+        if(!target) return;
+
+        event.preventDefault();
+        setMenu(false);
+
+        target.scrollIntoView({
+          behavior:reducedMotion.matches ? "instant" : "smooth",
+          block:"start"
+        });
+
+        if(history.replaceState){
+          history.replaceState(null,"",targetId);
+        }
+      });
+    });
+
+    // Native-friendly image fallback
+    // If an external photo fails, the existing area remains styled.
+    document.querySelectorAll("img").forEach(img => {
+      img.addEventListener("error",()=>{
+        const parent = img.parentElement;
+        if(parent) parent.classList.add("image-unavailable");
+      },{once:true});
+    });
+
+    // Animation setup
+    // Base layout remains fully visible if GSAP is unavailable.
+    if(typeof gsap === "undefined" ||
+       typeof ScrollTrigger === "undefined" ||
+       reducedMotion.matches){
+      return;
+    }
+
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.config({nullTargetWarn:false});
+
+    // Gentle introductory animations
+    gsap.from(".hero-kicker",{
+      y:18,opacity:0,duration:1,delay:.2,
+      ease:"power2.out",clearProps:"all"
+    });
+
+    gsap.from(".hero h1",{
+      y:36,opacity:0,duration:1.25,delay:.3,
+      ease:"power3.out",clearProps:"all"
+    });
+
+    gsap.from(".hero-description, .hero-actions",{
+      y:22,opacity:0,duration:1,delay:.6,
+      stagger:.14,ease:"power2.out",clearProps:"all"
+    });
+
+    // Hero parallax
+    // Only move the image, never continuously transform
+    // the hero text, avoiding reverse-scroll font blurring.
+    gsap.to("#heroImage",{
+      yPercent:12,ease:"none",
+      scrollTrigger:{
+        trigger:".hero",start:"top top",
+        end:"bottom top",scrub:1.2,
+        invalidateOnRefresh:true
+      }
+    });
+
+    // Editorial reveals
+    gsap.utils.toArray(".reveal-text").forEach(el => {
+      gsap.from(el,{
+        y:45,opacity:0,duration:1.15,
+        ease:"power3.out",
+        clearProps:"transform,opacity",
+        scrollTrigger:{
+          trigger:el,start:"top 92%",
+          toggleActions:"play none none none",
+          once:true
+        }
+      });
+    });
+
+    // Section image reveals
+    const revealItems = [
+      ".intro-visual",
+      ".intro-copy .body-copy",
+      ".experience-primary",
+      ".experience-secondary",
+      ".gallery-item",
+      ".visit-copy",
+      ".visit-visual",
+      ".footer-brand"
+    ];
+
+    revealItems.forEach(selector => {
+      gsap.utils.toArray(selector).forEach((el,index) => {
+        gsap.from(el,{
+          opacity:0,y:45,
+          duration:1.05,
+          delay:selector === ".gallery-item" ? index*.08 : 0,
+          ease:"power2.out",
+          clearProps:"transform,opacity",
+          scrollTrigger:{
+            trigger:el,start:"top 94%",
+            once:true
+          }
+        });
+      });
+    });
+
+    // Image parallax within a safely oversized image area
+    gsap.utils.toArray(".parallax-image").forEach(wrapper => {
+      const image = wrapper.querySelector("img");
+      if(!image) return;
+
+      gsap.fromTo(image,
+        {yPercent:-4},
+        {
+          yPercent:4,ease:"none",
+          scrollTrigger:{
+            trigger:wrapper,
+            start:"top bottom",
+            end:"bottom top",
+            scrub:1.3,
+            invalidateOnRefresh:true
+          }
+        }
+      );
+    });
+
+    // Full-width cinematic banner
+    gsap.fromTo(".banner-bg img",
+      {yPercent:-7,scale:1.1},
+      {
+        yPercent:7,scale:1.02,ease:"none",
+        scrollTrigger:{
+          trigger:".banner",
+          start:"top bottom",
+          end:"bottom top",
+          scrub:1.5,
+          invalidateOnRefresh:true
+        }
+      }
+    );
+
+    // Desktop pinned storytelling
+    // Mobile gets a naturally stacked narrative instead.
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width: 701px) and (prefers-reduced-motion: no-preference)",()=>{
+      const stage = document.querySelector(".story-stage");
+      const panels = gsap.utils.toArray(".story-panel");
+      const counter = document.getElementById("storyCurrent");
+
+      if(!stage || panels.length !== 3) return;
+
+      gsap.set(panels.slice(1),{
+        autoAlpha:0,y:35
+      });
+
+      const timeline = gsap.timeline({
+        defaults:{ease:"power2.inOut"},
+        scrollTrigger:{
+          trigger:stage,
+          start:"top top",
+          end:()=>"+="+Math.max(window.innerHeight*2.2,1200),
+          pin:true,
+          scrub:1,
+          anticipatePin:1,
+          invalidateOnRefresh:true,
+          onUpdate:self=>{
+            const p = self.progress;
+            counter.textContent =
+              p < .34 ? "01" : p < .68 ? "02" : "03";
+          }
+        }
+      });
+
+      timeline
+        .to(panels[0],{autoAlpha:0,y:-35,duration:.5},.65)
+        .to(panels[1],{autoAlpha:1,y:0,duration:.5},1.05)
+        .to(panels[1],{autoAlpha:0,y:-35,duration:.5},2.0)
+        .to(panels[2],{autoAlpha:1,y:0,duration:.5},2.4)
+        .to({}, {duration:.55});
+
+      return ()=>{
+        timeline.kill();
+        gsap.set(panels,{clearProps:"all"});
+        counter.textContent="01";
+      };
+    });
+
+    // Refresh measurements after photos finish loading
+    let refreshTimer;
+
+    function scheduleRefresh(){
+      clearTimeout(refreshTimer);
+      refreshTimer=setTimeout(()=>{
+        ScrollTrigger.refresh();
+      },150);
+    }
+
+    document.querySelectorAll("img").forEach(img=>{
+      if(!img.complete){
+        img.addEventListener("load",scheduleRefresh,{once:true});
+        img.addEventListener("error",scheduleRefresh,{once:true});
+      }
+    });
+
+    window.addEventListener("load",scheduleRefresh,{once:true});
+    window.addEventListener("pageshow",event=>{
+      updateScrollUI();
+      if(event.persisted) scheduleRefresh();
+    });
+
+    let lastWidth=window.innerWidth;
+    window.addEventListener("resize",()=>{
+      if(Math.abs(window.innerWidth-lastWidth)>5){
+        lastWidth=window.innerWidth;
+        if(window.innerWidth>950) setMenu(false);
+        scheduleRefresh();
+      }
+    },{passive:true});
+
+  })();
+  </script>
+</body>
+</html>
